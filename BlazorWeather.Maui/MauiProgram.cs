@@ -13,14 +13,14 @@ namespace BlazorWeather.Maui
         {
             var builder = MauiApp.CreateBuilder();
             builder
-                .RegisterBlazorMauiWebView()
+                
                 .UseMauiApp<App>()
                 .ConfigureFonts(fonts =>
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                 });
 
-            builder.Services.AddBlazorWebView();
+            builder.Services.AddMauiBlazorWebView();
             builder.Services.AddBlazorWeather("https://minimalweather20210428173256.azurewebsites.net/");
 #if WINDOWS
             builder.Services.AddSingleton<ITrayService, WinUI.TrayService>();
